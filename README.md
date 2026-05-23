@@ -21,31 +21,11 @@ A 3D real-time multiplayer aerial combat game on the web.
 
 ### What is this project?
 
-![Main menu screen](docs/images/main-menu.svg)
 
 Airplane Attack is a real-time, browser-playable fighter-jet game. The whole experience — 3D rendering, physics, audio, multiplayer rooms, leaderboard, and player accounts — lives in a single full-stack codebase that you can spin up locally with one Docker command.
 
 You take control of one of four fighter aircraft (F-16, F-22, Su-57, or a Stealth prototype), choose between five themed maps (Ocean, Desert, Snow, City, Night Sky), and engage waves of AI enemies — small fighters, fast interceptors, heavy bombers, and bosses — or join a Socket.io-powered multiplayer room and fight other players head-to-head or in teams.
 
-### Why it exists
-
-- **Showcase a complete real-time web stack** — React + Three.js on the client, Express + Socket.io + TypeORM on the server, PostgreSQL for persistence, Nginx as a reverse proxy, all wired up with Docker Compose.
-- **Prove that 3D combat works smoothly in a browser** — no plugins, no downloads, no app store; just open a URL and play, on desktop or mobile.
-- **Be a clean, opinionated template** — JWT auth, REST + WebSocket APIs, Swagger docs, modular game systems (weapons, weather, fuel, slow-motion, power-ups) that other developers can fork and extend.
-
-### What makes it different
-
-- **Zero-install play** — runs entirely in any modern browser.
-- **Cross-input by design** — keyboard + mouse on desktop, touch joystick + on-screen buttons on mobile, optional tilt input.
-- **Always-on control HUD** — every key and its in-game symbol is shown on screen during play, so first-time players never have to memorise a key list.
-- **Audio that always works** — a synthesized Web Audio engine produces background music, key-press clicks, missile launches, and explosions even when no `.mp3` files are present.
-- **Single-command boot** — `docker compose up --build` brings up the entire stack: database, backend, frontend, reverse proxy, and API docs.
-
-### Who it's for
-
-- **Players** who want a quick, open-and-fly arcade dogfight that runs anywhere a browser does.
-- **Web developers** studying a complete, opinionated full-stack template (auth, sockets, ORM, leaderboard, Docker, Nginx).
-- **Game-dev learners** who want to see how real-time 3D, input handling, audio, and networking come together in a small, readable codebase they can fork and extend.
 
 ### At a glance
 
@@ -59,29 +39,7 @@ You take control of one of four fighter aircraft (F-16, F-22, Su-57, or a Stealt
 | **Deployment**   | One-command Docker Compose stack                             |
 | **License**      | Open-source, fork-friendly                                   |
 
----
 
-## Slide 2 — Screenshots
-
-Every image below is a real asset stored in [`docs/images/`](docs/images/) — generated directly from this project's UI components, not stock or example art.
-
-### Banner
-
-![Airplane Attack banner](docs/images/banner.svg)
-
-### Main Menu
-
-![Main menu](docs/images/main-menu.svg)
-
-### Jet Selection
-
-![Jet selection](docs/images/jet-selection.svg)
-
-### Gameplay HUD
-
-![Gameplay HUD](docs/images/gameplay.svg)
-
----
 
 ## Slide 3 — Technology Stack
 
