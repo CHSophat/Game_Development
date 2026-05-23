@@ -89,62 +89,108 @@ You take control of one of four fighter aircraft (F-16, F-22, Su-57, or a Stealt
 
 ## Slide 3 — Core Features
 
-### Gameplay
+> Every feature listed below is implemented in this repository. The game ships with four flyable jets, five maps, four weapon types, six enemy classes, dynamic weather, full mobile + desktop input, and a complete online backend.
 
-- **4 Fighter Jets** — F-16, F-22, Su-57, Stealth
-- **2 Solo Modes** — Mission & Survival
-- **Multiplayer** — PvP and Team rooms
-- **Boss Battles** — Heavy mid-mission encounters
-- **5 Maps** — Ocean, Desert, Snow, City, Night Sky
+### Jet Roster
 
-### Combat & Systems
+Four flyable aircraft, each with distinct stats pulled straight from `frontend/src/types/Jet.ts`.
 
-- **Weapons** — Machine gun, missiles, laser, bombs
-- **Missile Lock-On** — Target tracking with audio cue
-- **Power-ups** — Health, missile reload, fuel, shield
-- **Dynamic Weather** — Rain, clouds, thunder
-- **Slow-Motion Triggers** — Big-kill camera moments
+| Jet         | Speed | Armor | Damage | Missiles | Unlock | Role                                 |
+|-------------|-------|-------|--------|----------|--------|--------------------------------------|
+| **F-16**    | 40    | 100   | 8      | 6        | Free   | Balanced multirole fighter           |
+| **F-22**    | 50    | 110   | 10     | 8        | 1500   | Air superiority, high speed          |
+| **Su-57**   | 48    | 120   | 11     | 8        | 2000   | Heavy hitter with thrust vectoring   |
+| **Stealth** | 45    | 90    | 14     | 4        | 3500   | Low signature, glass cannon          |
 
-### Interface
+### Game Modes
 
-- **Always-on Control HUD** — Key + symbol per control
-- **Radar Minimap** — Player, enemies, boss blips
-- **Kill Combo Tracker** — Stacking score multiplier
-- **Reward Popups** — Live XP and coin feedback
-- **70% Browser Zoom Layout** — Wide-screen friendly
+- **Mission Mode** — Objective-driven runs with a scripted boss spawn at ~60 seconds
+- **Survival Mode** — Escalating waves; spawn rate ramps up the longer you stay alive
+- **Multiplayer PvP** — Free-for-all rooms over Socket.io
+- **Multiplayer Team** — Co-op / team-vs-team matches with shared scoring
+
+### Maps & Environment
+
+- **Five Themed Maps** — Ocean, Desert, Snow, City, Night Sky
+- **Dynamic Weather System** — Clear, clouds, rain, thunder
+- **Per-map Lighting & Skybox** — Each scene has its own atmosphere
+- **Power-up Spawns** — Health, missile reload, fuel, shield drops in-flight
+
+### Weapons & Combat
+
+- **Machine Gun** — Continuous fire on `Space`
+- **Missiles** — `R` to lock and fire on tracked targets
+- **Laser** — `L` for a precision energy beam
+- **Bombs** — `B` to drop ground-targeted ordnance
+- **Missile Lock-On** — Reticle locks within the forward cone, audible cue on lock
+- **Boss Battles** — Heavy enemies with multi-stage health pools
+
+### Enemy Variety
+
+- **Small** — Cheap, numerous, fast to kill
+- **Fast** — Maneuverable interceptors
+- **Bomber** — Heavy armor, slow, fires back
+- **Boss** — End-of-mission encounter with multi-stage health
+- **Spawn Pacing** — Mission uses a fixed cadence; Survival ramps from 2.5 s → tighter as time progresses
+
+### HUD & Interface
+
+- **Always-on Control Panel** — Every key + matching symbol shown during gameplay
+- **Health Bar** — Color-coded HP indicator (top-left)
+- **Ammo + Fuel Gauges** — Missile count and fuel ratio
+- **Radar Minimap** — Player (green), enemies (red), boss (gold) blips
+- **Kill Combo Tracker** — Stacking score multiplier with timer
+- **Reward Popups** — Live `+SCORE`, `+POWERUP`, `+KILL` feedback
+- **Targeting Reticle** — Crosshair with lock indicator
+- **70% Browser Zoom Layout** — Wide-screen-friendly scaling
+
+### Player Progression
+
+- **Coins & XP** — Earned per kill, mission, and survival time
+- **Levels** — Persistent profile progression
+- **Unlockable Jets** — F-16 free; F-22, Su-57, Stealth purchased with coins
+- **Upgrade System** — Engine, armor, missile, fuel, radar upgrades
+- **Daily Rewards** — Login-based bonus coins / XP
 
 ### Backend & Online
 
-- **Guest + Account Auth** — JWT-based
-- **Global Leaderboard** — Score, kills, survival time
-- **Player Profiles** — Coins, XP, unlocked jets
-- **Upgrade System** — Engine, armor, missile, fuel, radar
-- **REST + Sockets** — Swagger docs + Socket.io rooms
+- **Guest Login** — One-tap "Continue as Guest" — no email required
+- **Account Auth** — JWT-based register / login
+- **Global Leaderboard** — Score, kills, and survival time submitted on game-over
+- **Socket.io Rooms** — Real-time multiplayer state sync
+- **Swagger API Docs** — Auto-generated at `/api-docs`
+- **PostgreSQL Persistence** — Players, scores, and match history
 
-### Cross-Input
+### Cross-Input Controls
 
-- **Keyboard + Mouse** — Desktop primary
-- **Touch Joystick** — Mobile virtual stick
-- **Fire / Boost / Missile Buttons** — On-screen
-- **Tilt Support** — Optional gyroscope input
+- **Keyboard + Mouse** — Primary desktop input (W/A/S/D + Q/E + Space/R/B/L)
+- **Touch Joystick** — Mobile virtual stick for pitch / yaw
+- **On-screen Buttons** — FIRE, MSL, BOOST for touch devices
+- **Tilt Support** — Optional gyroscope-driven yaw on mobile
+- **Audible Key Feedback** — Short click confirms every control press
 
 ### Audio
 
-- **Synthesized Music** — Web Audio fallback (no mp3 required)
-- **Key-Press SFX** — Audible click on every control input
-- **Combat SFX** — Missiles, explosions, alarms
-- **Music / SFX Toggles** — In Settings
+- **Synthesized Background Music** — Web Audio arpeggio + bass drone (no mp3 required)
+- **Key-Press SFX** — Click on every control input
+- **Combat SFX** — Missile launch, gun fire, explosion, alarm-on-hit
+- **Engine Loop** — Constant ambient hum while flying
+- **Music / SFX Toggles** — Independent on/off in Settings
 
 ### Features at a Glance
 
-| Category         | Highlights                                                       |
-|------------------|------------------------------------------------------------------|
-| Gameplay         | 4 jets, 5 maps, Mission + Survival, boss battles                 |
-| Combat & Systems | Gun, missile, laser, bombs, lock-on, power-ups, weather          |
-| Interface        | Always-on control HUD, radar, combo, reward popups               |
-| Backend & Online | JWT auth, global leaderboard, profiles, upgrades, sockets        |
-| Cross-Input      | Keyboard + mouse, touch joystick, on-screen buttons, tilt        |
-| Audio            | Synth music, key clicks, combat SFX, toggles                     |
+| Category    | Highlights                                                        |
+|-------------|-------------------------------------------------------------------|
+| Jet Roster  | 4 flyable jets with distinct speed / armor / damage profiles      |
+| Game Modes  | Mission, Survival, PvP, Team                                      |
+| Maps        | Ocean, Desert, Snow, City, Night Sky + dynamic weather            |
+| Weapons     | Gun, missile (lock-on), laser, bombs                              |
+| Enemies     | Small, Fast, Bomber, Boss                                         |
+| HUD         | Always-on control panel, radar, combo, reward popups              |
+| Progression | Coins, XP, levels, jet unlocks, upgrades, daily rewards           |
+| Online      | JWT auth, global leaderboard, Socket.io rooms, Swagger docs       |
+| Input       | Keyboard + mouse, touch joystick, on-screen buttons, tilt         |
+| Audio       | Synth music + bass drone, key clicks, combat SFX, settings toggle |
 
 ---
 
