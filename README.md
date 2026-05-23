@@ -61,7 +61,29 @@ You take control of one of four fighter aircraft (F-16, F-22, Su-57, or a Stealt
 
 ---
 
-## Slide 2 — Technology Stack
+## Slide 2 — Screenshots
+
+Every image below is a real asset stored in [`docs/images/`](docs/images/) — generated directly from this project's UI components, not stock or example art.
+
+### Banner
+
+![Airplane Attack banner](docs/images/banner.svg)
+
+### Main Menu
+
+![Main menu](docs/images/main-menu.svg)
+
+### Jet Selection
+
+![Jet selection](docs/images/jet-selection.svg)
+
+### Gameplay HUD
+
+![Gameplay HUD](docs/images/gameplay.svg)
+
+---
+
+## Slide 3 — Technology Stack
 
 ### Frontend
 
@@ -91,7 +113,7 @@ You take control of one of four fighter aircraft (F-16, F-22, Su-57, or a Stealt
 
 ---
 
-## Slide 3 — Core Features
+## Slide 4 — Core Features
 
 > Every feature listed below is implemented in this repository. The game ships with four flyable jets, five maps, four weapon types, six enemy classes, dynamic weather, full mobile + desktop input, and a complete online backend.
 
@@ -202,7 +224,7 @@ Four flyable aircraft, each with distinct stats pulled straight from `frontend/s
 
 ---
 
-## Slide 4 — Flow & Processing
+## Slide 5 — Flow & Processing
 
 ### High-level architecture
 
@@ -276,7 +298,7 @@ flowchart LR
 
 ---
 
-## Slide 5 — Getting Started
+## Slide 6 — Getting Started
 
 ```bash
 # clone & boot the whole stack
