@@ -1,18 +1,63 @@
 # Airplane Attack Game
 
-A 3D airplane combat game built as a full-stack web application with real-time multiplayer support.
+A 3D real-time multiplayer aerial combat game on the web.
+
+[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+[![Three.js](https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=three.js&logoColor=white)](https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=three.js&logoColor=white)
+[![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
+[![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 
 ---
 
-## Introduction
+## Slide 1 — Introduction
 
-**Airplane Attack** is a browser-based 3D aerial combat game. Pick one of four fighter jets (F-16, F-22, Su-57, Stealth), fly across five maps, and fight enemies, bombers, and bosses solo or against other players online. The whole stack runs in Docker — `docker compose up --build` and you're flying at `http://localhost`.
+> **Airplane Attack** is a browser-based 3D aerial combat game built as a complete full-stack application.
+> Pick a jet, choose a map, and fight enemies and bosses solo — or jump online and battle other players in real time.
+> No download, no launcher. Open a browser, fly.
+
+### What is this project?
+
+Airplane Attack is a real-time, browser-playable fighter-jet game. The whole experience — 3D rendering, physics, audio, multiplayer rooms, leaderboard, and player accounts — lives in a single full-stack codebase that you can spin up locally with one Docker command.
+
+You take control of one of four fighter aircraft (F-16, F-22, Su-57, or a Stealth prototype), choose between five themed maps (Ocean, Desert, Snow, City, Night Sky), and engage waves of AI enemies — small fighters, fast interceptors, heavy bombers, and bosses — or join a Socket.io-powered multiplayer room and fight other players head-to-head or in teams.
+
+### Why it exists
+
+- **Showcase a complete real-time web stack** — React + Three.js on the client, Express + Socket.io + TypeORM on the server, PostgreSQL for persistence, Nginx as a reverse proxy, all wired up with Docker Compose.
+- **Prove that 3D combat works smoothly in a browser** — no plugins, no downloads, no app store; just open a URL and play, on desktop or mobile.
+- **Be a clean, opinionated template** — JWT auth, REST + WebSocket APIs, Swagger docs, modular game systems (weapons, weather, fuel, slow-motion, power-ups) that other developers can fork and extend.
+
+### What makes it different
+
+- **Zero-install play** — runs entirely in any modern browser.
+- **Cross-input by design** — keyboard + mouse on desktop, touch joystick + on-screen buttons on mobile, optional tilt input.
+- **Always-on control HUD** — every key and its in-game symbol is shown on screen during play, so first-time players never have to memorise a key list.
+- **Audio that always works** — a synthesized Web Audio engine produces background music, key-press clicks, missile launches, and explosions even when no `.mp3` files are present.
+- **Single-command boot** — `docker compose up --build` brings up the entire stack: database, backend, frontend, reverse proxy, and API docs.
+
+### Who it's for
+
+- **Players** who want a quick, open-and-fly arcade dogfight that runs anywhere a browser does.
+- **Web developers** studying a complete, opinionated full-stack template (auth, sockets, ORM, leaderboard, Docker, Nginx).
+- **Game-dev learners** who want to see how real-time 3D, input handling, audio, and networking come together in a small, readable codebase they can fork and extend.
+
+### At a glance
+
+| Property         | Value                                                        |
+|------------------|--------------------------------------------------------------|
+| **Genre**        | 3D arcade flight combat                                      |
+| **Platform**     | Web browser (desktop + mobile)                               |
+| **Modes**        | Mission · Survival · PvP · Team                              |
+| **Players**      | Single-player and online multiplayer (Socket.io rooms)       |
+| **Persistence**  | Player profiles, coins, XP, unlocked jets, global scores     |
+| **Deployment**   | One-command Docker Compose stack                             |
+| **License**      | Open-source, fork-friendly                                   |
 
 ---
 
-## Technology Stack
-
-Every badge below is a real, browser-openable image URL served by [shields.io](https://shields.io) — click any image to view it directly in your browser.
+## Slide 2 — Technology Stack
 
 ### Frontend
 
@@ -40,22 +85,156 @@ Every badge below is a real, browser-openable image URL served by [shields.io](h
 [![Nginx](https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=nginx&logoColor=white)](https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=nginx&logoColor=white)
 [![Swagger](https://img.shields.io/badge/Swagger-85EA2D?style=for-the-badge&logo=swagger&logoColor=black)](https://img.shields.io/badge/Swagger-85EA2D?style=for-the-badge&logo=swagger&logoColor=black)
 
-### Summary Table
+---
 
-| Layer        | Tech                                           |
-|--------------|------------------------------------------------|
-| **Frontend** | React 18, TypeScript, Three.js, Vite, Zustand  |
-| **Backend**  | Node.js 20, Express, Socket.io, TypeORM, JWT   |
-| **Database** | PostgreSQL 16                                  |
-| **Infra**    | Docker Compose, Nginx (reverse proxy)          |
-| **Docs**     | Swagger / OpenAPI (auto-generated from JSDoc)  |
+## Slide 3 — Core Features
+
+### Gameplay
+
+- **4 Fighter Jets** — F-16, F-22, Su-57, Stealth
+- **2 Solo Modes** — Mission & Survival
+- **Multiplayer** — PvP and Team rooms
+- **Boss Battles** — Heavy mid-mission encounters
+- **5 Maps** — Ocean, Desert, Snow, City, Night Sky
+
+### Combat & Systems
+
+- **Weapons** — Machine gun, missiles, laser, bombs
+- **Missile Lock-On** — Target tracking with audio cue
+- **Power-ups** — Health, missile reload, fuel, shield
+- **Dynamic Weather** — Rain, clouds, thunder
+- **Slow-Motion Triggers** — Big-kill camera moments
+
+### Interface
+
+- **Always-on Control HUD** — Key + symbol per control
+- **Radar Minimap** — Player, enemies, boss blips
+- **Kill Combo Tracker** — Stacking score multiplier
+- **Reward Popups** — Live XP and coin feedback
+- **70% Browser Zoom Layout** — Wide-screen friendly
+
+### Backend & Online
+
+- **Guest + Account Auth** — JWT-based
+- **Global Leaderboard** — Score, kills, survival time
+- **Player Profiles** — Coins, XP, unlocked jets
+- **Upgrade System** — Engine, armor, missile, fuel, radar
+- **REST + Sockets** — Swagger docs + Socket.io rooms
+
+### Cross-Input
+
+- **Keyboard + Mouse** — Desktop primary
+- **Touch Joystick** — Mobile virtual stick
+- **Fire / Boost / Missile Buttons** — On-screen
+- **Tilt Support** — Optional gyroscope input
+
+### Audio
+
+- **Synthesized Music** — Web Audio fallback (no mp3 required)
+- **Key-Press SFX** — Audible click on every control input
+- **Combat SFX** — Missiles, explosions, alarms
+- **Music / SFX Toggles** — In Settings
+
+### Features at a Glance
+
+| Category         | Highlights                                                       |
+|------------------|------------------------------------------------------------------|
+| Gameplay         | 4 jets, 5 maps, Mission + Survival, boss battles                 |
+| Combat & Systems | Gun, missile, laser, bombs, lock-on, power-ups, weather          |
+| Interface        | Always-on control HUD, radar, combo, reward popups               |
+| Backend & Online | JWT auth, global leaderboard, profiles, upgrades, sockets        |
+| Cross-Input      | Keyboard + mouse, touch joystick, on-screen buttons, tilt        |
+| Audio            | Synth music, key clicks, combat SFX, toggles                     |
 
 ---
 
-## Getting Started
+## Slide 4 — Flow & Processing
 
-```bash
-docker compose up --build
+### High-level architecture
+
+```mermaid
+flowchart LR
+    Browser["Browser<br/>React + Three.js"] -- HTTPS --> Nginx["Nginx<br/>reverse proxy"]
+    Browser -- WebSocket --> Nginx
+    Nginx -- "/api/*"    --> Backend["Node.js + Express<br/>Socket.io"]
+    Nginx -- "/"         --> Static["Static frontend<br/>built by Vite"]
+    Backend -- TypeORM   --> DB[("PostgreSQL<br/>players · scores")]
+    Backend -- Swagger   --> Docs["/api-docs"]
 ```
 
-Then open `http://localhost` to play.
+### Player session flow
+
+```mermaid
+sequenceDiagram
+    participant U as User
+    participant FE as Frontend (React)
+    participant BE as Backend (Express)
+    participant DB as PostgreSQL
+
+    U->>FE: Open http://localhost
+    FE->>BE: POST /auth/register (guest)
+    BE->>DB: INSERT player
+    DB-->>BE: player row + id
+    BE-->>FE: JWT + profile
+    U->>FE: Pick jet + map, press DEPLOY
+    FE->>FE: Mount GameCanvas, start Three.js loop
+    loop Every frame (~60 fps)
+        FE->>FE: Read keys / touch, update jet
+        FE->>FE: Spawn enemies, projectiles, FX
+        FE->>FE: Render scene + HUD
+    end
+    U->>FE: Mission ends / jet destroyed
+    FE->>BE: POST /leaderboard/submit
+    BE->>DB: INSERT score
+    DB-->>BE: ok
+    BE-->>FE: rank update
+    FE-->>U: Game Over screen + final score
+```
+
+### Per-frame game loop
+
+```mermaid
+flowchart TD
+    A[requestAnimationFrame] --> B[Read input<br/>keys + touch + tilt]
+    B --> C[Update player rotation,<br/>boost, fuel]
+    C --> D[Spawn / update enemies]
+    D --> E[Fire weapons<br/>gun · missile · bomb · laser]
+    E --> F[Collision detection<br/>bullets ↔ enemies / player]
+    F --> G[Trigger explosions,<br/>combo, score, audio SFX]
+    G --> H[Update weather + power-ups]
+    H --> I[Move camera, render scene]
+    I --> J[Draw HUD overlay<br/>HP · ammo · radar · controls]
+    J --> A
+```
+
+### Multiplayer event flow
+
+```mermaid
+flowchart LR
+    P1["Player A<br/>browser"] <-- socket events --> S{{"Socket.io<br/>room"}}
+    P2["Player B<br/>browser"] <-- socket events --> S
+    P3["Player C<br/>browser"] <-- socket events --> S
+    S -- broadcast --> P1
+    S -- broadcast --> P2
+    S -- broadcast --> P3
+    S -- persist match result --> DB[("PostgreSQL")]
+```
+
+---
+
+## Slide 5 — Getting Started
+
+```bash
+# clone & boot the whole stack
+docker compose up --build
+
+# then open
+http://localhost          # game
+http://localhost/api-docs # API reference (Swagger)
+```
+
+> Frontend hot-reloads via Vite. Backend uses `ts-node-dev`. Database state persists in the `postgres/` volume.
+
+---
+
+## End of Presentation — Time to Fly
