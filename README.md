@@ -1,5 +1,7 @@
 # Airplane Attack Game
 
+![Airplane Attack banner](docs/images/banner.svg)
+
 A 3D real-time multiplayer aerial combat game on the web.
 
 [![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
@@ -18,6 +20,8 @@ A 3D real-time multiplayer aerial combat game on the web.
 > No download, no launcher. Open a browser, fly.
 
 ### What is this project?
+
+![Main menu screen](docs/images/main-menu.svg)
 
 Airplane Attack is a real-time, browser-playable fighter-jet game. The whole experience — 3D rendering, physics, audio, multiplayer rooms, leaderboard, and player accounts — lives in a single full-stack codebase that you can spin up locally with one Docker command.
 
@@ -93,6 +97,8 @@ You take control of one of four fighter aircraft (F-16, F-22, Su-57, or a Stealt
 
 ### Jet Roster
 
+![Jet selection screen](docs/images/jet-selection.svg)
+
 Four flyable aircraft, each with distinct stats pulled straight from `frontend/src/types/Jet.ts`.
 
 | Jet         | Speed | Armor | Damage | Missiles | Unlock | Role                                 |
@@ -134,6 +140,8 @@ Four flyable aircraft, each with distinct stats pulled straight from `frontend/s
 - **Spawn Pacing** — Mission uses a fixed cadence; Survival ramps from 2.5 s → tighter as time progresses
 
 ### HUD & Interface
+
+![In-game HUD](docs/images/gameplay.svg)
 
 - **Always-on Control Panel** — Every key + matching symbol shown during gameplay
 - **Health Bar** — Color-coded HP indicator (top-left)
