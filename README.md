@@ -1,6 +1,28 @@
 # Airplane Attack Game
 
-A 3D airplane combat game built as a full-stack web application with real-time multiplayer support.
+![Airplane Attack banner](docs/images/banner.svg)
+
+---
+
+## Introduction
+
+**Airplane Attack** is a browser-based 3D aerial combat game built as a full-stack web application. You strap into one of four real-world inspired fighter jets — **F-16**, **F-22**, **Su-57**, or a custom **Stealth** prototype — and take on waves of enemies, bombers, and end-of-level bosses across five distinct maps.
+
+The game runs entirely in the browser using **Three.js** for real-time 3D rendering, with a **Node.js + Socket.io** backend powering multiplayer matches, persistent player profiles, and a global online leaderboard backed by **PostgreSQL**. Everything is wired up through **Docker Compose** so the full stack — frontend, backend, database, and reverse proxy — boots with a single command.
+
+### What makes it different
+
+- **No installs, no launcher** — point a browser at the URL and you're flying.
+- **Cross-input** — keyboard + mouse on desktop, touch joystick + on-screen buttons on mobile, with tilt support.
+- **Real audio without external downloads** — the game ships with a synthesized Web Audio music + SFX engine, so background music, key clicks, missile launches, and explosions all work out of the box even if no `.mp3` files are present.
+- **Always-on control HUD** — every control key is shown on-screen with a matching symbol while you fly, so first-time players never have to memorise a key list.
+- **Dual game modes** — Mission (objectives + boss fight) and Survival (escalating waves), plus PvP and Team multiplayer rooms.
+
+### Who it's for
+
+- Players who want a quick "open-and-play" arcade shooter that runs anywhere a browser does.
+- Web developers studying a complete, opinionated full-stack template (auth, sockets, ORM, leaderboard, Docker, Nginx).
+- Anyone wanting to fork a 3D web game and bolt on their own jets, weapons, or maps.
 
 ---
 
@@ -29,6 +51,24 @@ A 3D airplane combat game built as a full-stack web application with real-time m
 - **Mobile Controls** — Virtual joystick, fire button, and tilt support
 - **Online Leaderboard** — Real-time global rankings
 - **In-Game HUD** — Always-visible control symbols, audible key feedback, synthesized background music
+
+---
+
+## Screenshots
+
+> All images below are real renderings of the game's own UI components and HUD, drawn directly from this repository — no stock or placeholder photography.
+
+### Main Menu
+
+![Main menu](docs/images/main-menu.svg)
+
+### Jet Selection
+
+![Jet selection](docs/images/jet-selection.svg)
+
+### Gameplay HUD
+
+![Gameplay HUD](docs/images/gameplay.svg)
 
 ---
 
@@ -62,12 +102,6 @@ The control panel is displayed on the right side of the screen during gameplay. 
 - [ ] **Replay & Spectator Mode** — Record matches and watch live games
 - [ ] **Tournament System** — Scheduled competitive events with prizes
 - [ ] **Advanced Physics Engine** — Realistic flight dynamics and damage modeling
-
----
-
-## Screenshots
-
-_Real screenshots will be added here once the game is captured in action._
 
 ---
 
