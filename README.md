@@ -1,6 +1,5 @@
 # Airplane Attack Game
 
-![Airplane Attack banner](docs/images/banner.svg)
 
 A 3D real-time multiplayer aerial combat game on the web.
 
@@ -77,7 +76,6 @@ You take control of one of four fighter aircraft (F-16, F-22, Su-57, or a Stealt
 
 ### Jet Roster
 
-![Jet selection screen](docs/images/jet-selection.svg)
 
 Four flyable aircraft, each with distinct stats pulled straight from `frontend/src/types/Jet.ts`.
 
@@ -121,7 +119,6 @@ Four flyable aircraft, each with distinct stats pulled straight from `frontend/s
 
 ### HUD & Interface
 
-![In-game HUD](docs/images/gameplay.svg)
 
 - **Always-on Control Panel** — Every key + matching symbol shown during gameplay
 - **Health Bar** — Color-coded HP indicator (top-left)
